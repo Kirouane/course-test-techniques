@@ -3,26 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Generate pdf</title>
-    <script src="https://code.jquery.com/jquery-3.2.1.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 </head>
 <body>
 <script type="text/javascript">
-    $(function(){
+    $(function () {
         const apiPath = "http://localhost:1980";
 
         $("#generate").click(function () {
 
-            $.post(apiPath + "/url", { name: $("#name").val(), url: $("#url").val() })
-            .done(function( data ) {
-                alert( "Data Loaded: " + data );
+            $.post(apiPath + "/url", {name: $("#name").val(), url: $("#url").val()}).done(function (data) {
+
             });
         })
+
+        setInterval(function(){
+            $.get(apiPath + "/pdf", function( data ) {
+                console.log(data)
+                let filesDiv = $("#files");
+                filesDiv.html("")
+                data.forEach(function (file) {
+                    filesDiv.append('<a href="storage/'+ file + '">' + file  + "</a><br/>")
+                });
+            });
+        }, 5000);
     })
 </script>
 <div>
     <label for="name">PDF Name : </label><input name="name" id="name"/>
     <label for="url">URL: </label><input name="url" id="url"/>
     <button id="generate">Generate</button>
+</div>
+<br /><br /><br />
+<div id="files">
+
 </div>
 </body>
 </html>

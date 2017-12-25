@@ -29,7 +29,7 @@ app
                             "webhook" : "http://localhost:1980/pdf/" + req.body.name
                         },
                         "id": "128612876124812"
-                    })
+                    }),
                 },
                 function (err, httpResponse, body) {
                     console.log(body)
@@ -51,15 +51,22 @@ app.use(bodyParser.raw({
 }));
 
 app
-    .route('/pdf/:name')
+    .route('/pdf/:name?')
     .get(function (req, res) {
-        res.send('pdf');
+        let files = [];
+        fs.readdirSync("../frontend/storage/").forEach(file => {
+            console.log(file);
+            files.push(file)
+        });
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Content-Type", "application/json");
+        res.send(files);
     })
     .post(function (req, res) {
         console.log(req.body);
         console.log(req.params.name);
 
-        fs.open("storage/" + req.params.name + ".pdf", 'w', function(err, fd) {
+        fs.open("../frontend/storage/" + req.params.name + ".pdf", 'w', function(err, fd) {
             if (err) {
                 throw 'could not open file: ' + err;
             }
