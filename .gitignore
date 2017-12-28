@@ -3,4 +3,4 @@ frontend/storage
 .idea/*
 vendor
 bin
-test/behat/composer.phar
+composer.phar
