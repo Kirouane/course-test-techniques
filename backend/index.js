@@ -38,7 +38,7 @@ app
         });
 
         res.header("Access-Control-Allow-Origin", "*");
-        res.send("Okay")
+        res.send(true)
 
     });
 
@@ -55,7 +55,6 @@ app
     .get(function (req, res) {
         let files = [];
         fs.readdirSync("../frontend/storage/").forEach(file => {
-            console.log(file);
             files.push(file)
         });
         res.header("Access-Control-Allow-Origin", "*");
