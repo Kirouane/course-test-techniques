@@ -3,8 +3,8 @@ namespace Test;
 class YesOrNoTest extends \PHPUnit\Framework\TestCase
 {
 
-    public static function testNo()
+    public static function test_YesOrNo_Should_Return_True()
     {
-        self::assertFalse(YesOrNo::yesNo('No'));
+        self::assertEquals(true, YesOrNo::yesNo('Yes'));
     }
 }

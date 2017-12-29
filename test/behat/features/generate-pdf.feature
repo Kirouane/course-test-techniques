@@ -5,4 +5,5 @@ Feature: Generate a PDF file for https://github.com
     When I fill in "name" with "BehatTest"
     And I fill in "url" with "https://github.com/Behat/MinkExtension/blob/master/doc/index.rst"
     And I press "generate"
-    Then I should see "agile software development"
+    And I wait for 5 seconds
+    Then I should see "BehatTest.pdf"
