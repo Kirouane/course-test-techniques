@@ -1,6 +1,8 @@
-backend/node_modules
+node_modules
 frontend/storage
 .idea/*
 vendor
 bin
 composer.phar
+*.log
+*.pid

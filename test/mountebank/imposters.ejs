@@ -1,0 +1,28 @@
+{
+    "imposters": [
+        {
+          "port": 4545,
+          "protocol": "http",
+          "stubs": [
+            {
+              "predicates": [
+                {
+                  "equals": {
+                    "method": "GET",
+                    "path": "/html"
+                  }
+                }
+              ],
+              "responses": [
+                {
+                  "is": {
+                      "body": "Hello <b>World</b>!"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+    ]
+}
+

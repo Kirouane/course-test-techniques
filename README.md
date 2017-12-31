@@ -6,3 +6,6 @@ google-chrome-stable --disable-gpu  --headless --remote-debugging-port=9222
 cd /var/www/course-test-techniques/backend && node index.js
 
 cd /var/www/course-test-techniques/frontend && php -S localhost:8002
+
+#Mountebank
+cd /var/www/course-test-techniques/test/mountebank && node_modules/.bin/mb --configfile imposters.ejs
