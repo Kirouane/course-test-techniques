@@ -9,3 +9,6 @@ cd /var/www/course-test-techniques/frontend && php -S localhost:8002
 
 #Mountebank
 cd /var/www/course-test-techniques/test/mountebank && node_modules/.bin/mb --configfile imposters.ejs
+
+#locust
+locust --host=http://localhost:8001
