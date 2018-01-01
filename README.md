@@ -11,4 +11,10 @@ cd /var/www/course-test-techniques/frontend && php -S localhost:8002
 cd /var/www/course-test-techniques/test/mountebank && node_modules/.bin/mb --configfile imposters.ejs
 
 #locust
-locust --host=http://localhost:8001
+cd /var/www/course-test-techniques/test/locust && locust --host=http://localhost:8001
+
+#prometheus
+cd /home/nassim.kirouane/prometheus-2.0.0.linux-amd64 && ./prometheus --config.file=prometheus.yml
+
+#clean
+rm -rf storage/pdf/* && rm -rf /var/www/course-test-techniques/frontend/storage/*
