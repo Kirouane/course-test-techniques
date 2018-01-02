@@ -17,4 +17,4 @@ cd /var/www/course-test-techniques/test/locust && locust --host=http://localhost
 cd /home/nassim.kirouane/prometheus-2.0.0.linux-amd64 && ./prometheus --config.file=prometheus.yml
 
 #clean
-rm -rf storage/pdf/* && rm -rf /var/www/course-test-techniques/frontend/storage/*
+rm -rf /home/nassim.kirouane/go/src/github.com/kirouane/go-pdf-bot/storage/pdf/* && rm -rf /var/www/course-test-techniques/frontend/storage/*

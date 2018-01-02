@@ -1,0 +1,14 @@
+{
+    "require-dev": {
+        "phpbench/phpbench": "@dev",
+        "phpunit/phpunit": "^6.5"
+    },
+    "config": {
+        "bin-dir": "bin/"
+    },
+    "autoload": {
+        "psr-4": {
+            "Test\\" : "src"
+        }
+    }
+}
