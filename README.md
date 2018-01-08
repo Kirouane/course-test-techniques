@@ -18,3 +18,6 @@ cd /home/nassim.kirouane/prometheus-2.0.0.linux-amd64 && ./prometheus --config.f
 
 #clean
 rm -rf /home/nassim.kirouane/go/src/github.com/kirouane/go-pdf-bot/storage/pdf/* && rm -rf /var/www/course-test-techniques/frontend/storage/*
+
+#phpbench
+bin/phpbench run Bench --report=aggregate
